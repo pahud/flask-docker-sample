@@ -1,15 +1,11 @@
-FROM alpine:latest
+FROM python:3-alpine
 
-RUN apk add python3 python3-dev && \
-  pip3 install --no-cache-dir --upgrade pip && \
-  pip3 install flask
-
-RUN cd /usr/bin \
-  && ln -sf python3 python \
-  && ln -sf pip3 pip
+RUN pip install flask
 
 ENV FLASK_APP app.py
 
 WORKDIR /app
+doc
 COPY . /app/
+
 CMD ["python", "app.py"]
