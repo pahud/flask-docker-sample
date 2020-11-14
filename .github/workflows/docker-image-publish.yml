@@ -36,9 +36,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: .devcontainer
           push: true
-          file: ./.devcontainer/Dockerfile
+          file: Dockerfile
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ steps.repoName.outputs.reponame }}:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ steps.repoName.outputs.reponame }}:${{ steps.sha.outputs.sha8 }}
@@ -73,9 +72,8 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: .devcontainer
           push: true
-          file: ./.devcontainer/Dockerfile
+          file: Dockerfile
           tags: |
             ghcr.io/${{github.repository}}:latest
             ghcr.io/${{github.repository}}:${{ steps.sha.outputs.sha8 }}
