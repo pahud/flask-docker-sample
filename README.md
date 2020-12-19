@@ -6,7 +6,7 @@ A sample Flask application running in Docker.
 
 **Amazon ECR**
 
-public.ecr.aws/d7p2r8s3/flask-docker-sample
+public.ecr.aws/pahudnet/flask-docker-sample
 
 **Docker Hub**
 
