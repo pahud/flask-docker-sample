@@ -1,13 +1,13 @@
 version: 1.0
 runtime: python3
 build:
-  env:
-    - name: PLATFORM
-      value: "AWS App Runner"
   commands:
     build:
     - pip install -r requirements.txt
 run:
+  env:
+    - name: PLATFORM
+      value: "AWS App Runner"
   command: python app.py
   network:
     port: 80
